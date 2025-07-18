@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,6 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Para o Amor da Minha Vida 💖</title>
   <style>
+    .heart-btn {
+      padding: 15px 30px;
+      font-size: 20px;
+      border: none;
+      border-radius: 10px;
+      background-color: #c90303;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 15px #c90303;
+      animation: heartbeat 1.5s infinite;
+      transition: transform 0.3s ease;
+    }
+
+    .heart-btn:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes heartbeat {
+      0%, 40%, 80%, 100% { transform: scale(1); }
+      20%, 60% { transform: scale(1.15); }
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -23,31 +46,6 @@
       color: #ffffff;
     }
 
-    .heart-btn, .welcome button {
-      padding: 12px 24px;
-      font-size: 18px;
-      border: none;
-      border-radius: 10px;
-      background-color: #c90303;
-      color: white;
-      cursor: pointer;
-      box-shadow: 0 0 15px rgba(173, 216, 230, 0.85);
-      transition: transform 0.3s ease;
-    }
-
-    .heart-btn {
-      animation: heartbeat 1.5s infinite;
-    }
-
-    .heart-btn:hover {
-      transform: scale(1.05);
-    }
-
-    @keyframes heartbeat {
-      0%, 40%, 80%, 100% { transform: scale(1); }
-      20%, 60% { transform: scale(1.15); }
-    }
-
     .welcome {
       position: fixed;
       top: 0; left: 0;
@@ -59,48 +57,50 @@
       justify-content: center;
       flex-direction: column;
       z-index: 999;
-      padding: 20px;
+    }
+
+    .welcome button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      background-color: #c90303;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 10px #c90303;
     }
 
     .hidden {
       display: none;
     }
 
-    .intro-box, .poema-box {
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 20px;
-      margin: 20px auto;
-      max-width: 90%;
-      border-radius: 20px;
-      box-shadow: 0 0 25px rgba(173, 216, 230, 0.85);
+    img {
+      width: 300px;
+      margin: 10px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #c90303;
+    }
+
+    video {
+      margin-top: 10px;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #c90303;
+    }
+
+    audio {
+      display: none;
     }
 
     .galeria {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 30px;
-      margin: 30px auto;
-      padding: 15px;
+      gap: 40px;
+      margin: 40px auto;
+      padding: 20px;
       max-width: 100%;
-    }
-
-    img {
-      width: 100%;
-      max-width: 300px;
-      border-radius: 15px;
-      box-shadow: 0 0 10px rgba(173, 216, 230, 0.85);
-    }
-
-    video {
-      width: 100%;
-      max-width: 600px;
-      border-radius: 15px;
-      box-shadow: 0 0 10px rgba(173, 216, 230, 0.85);
-    }
-
-    audio {
-      display: none;
     }
 
     .fade-in {
@@ -114,30 +114,19 @@
       transform: translateY(0);
     }
 
-    p.poema {
-      margin: 0 auto;
-      max-width: 90%;
-      line-height: 1.6;
+    .intro-box, .poema-box {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      margin: 20px auto;
+      max-width: 800px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(201, 3, 3, 0.5);
     }
 
-    /* Responsivo para smartphones */
-    @media (max-width: 600px) {
-      .intro-box, .poema-box {
-        padding: 15px;
-      }
-
-      h1, h2 {
-        font-size: 20px;
-      }
-
-      p, .poema {
-        font-size: 16px;
-      }
-
-      .heart-btn, .welcome button {
-        font-size: 16px;
-        padding: 10px 20px;
-      }
+    p.poema {
+      margin: 0 auto;
+      max-width: 700px;
+      line-height: 1.6;
     }
   </style>
 </head>
@@ -146,11 +135,9 @@
   <div class="welcome" id="welcome">
     <div class="intro-box">
       <h2>Bom dia, meu amor 💕</h2>
-      <p>
-        Fiz isso durante esses dias pra te mostrar o qual importante você é pra mim.<br><br>
+      <p>Fiz isso durante esses dias pra te mostrar o qual importante você é pra mim.<br><br>
         Quero estar ao seu lado a cada passo e a cada conquista que tivermos!<br><br>
-        Outras pessoas viram esse site, mas mudei pois queria que fosse único pra você!
-      </p>
+      outras pessoas viram esse site, mas mudei pois queria que fosse único pra você!</p>
       <button onclick="startSite()" class="heart-btn">💖 Entrar</button>
     </div>
   </div>
@@ -188,26 +175,25 @@
 
     <div class="poema-box">
       <p class="poema">
-        Busquei por muito tempo<br>
-        um lar onde eu pertencesse<br>
-        e finalmente achei um<br><br>
+    Busquei por muito tempo<br>
+um lar onde eu pertencesse<br>
+e finalmente achei um<br><br>
 
-        O meu lar tem os olhos castanhos claros<br>
-        o humor duvidoso — que eu amo —<br>
-        o seu jeito apaixonante, mais doce que brigadeiro<br>
-        o cabelo mais lindo que já vi<br>
-        o sorriso que carrega a risada mais adorável<br><br>
+O meu lar tem os olhos castanhos claros<br>
+o humor duvidoso — que eu amo —<br>
+o seu jeito apaixonante, mais doce que brigadeiro<br>
+o cabelo mais lindo que já vi<br>
+o sorriso que carrega a risada mais adorável<br><br>
 
-        Quero morar no seu abraço para sempre<br>
-        e estar do seu lado a cada instante<br>
-        Você é a definição da minha felicidade<br>
-        Tudo o que eu sempre quis em alguém, sem mudar nada<br>
-        É você quem eu amo, e sempre será<br><br>
+Quero morar no seu abraço para sempre<br>
+e estar do seu lado a cada instante<br>
+Você é a definição da minha felicidade<br>
+Tudo o que eu sempre quis em alguém, sem mudar nada<br>
+É você quem eu amo, e sempre será<br><br>
 
-        <i>- o meu lar é o meu amor</i><br>
-        <b>— @alucinadora</b>
-      </p>
-    </div>
+<i>- o meu lar é o meu amor</i>
+<b>— @alucinadora</b>
+
   </div>
 
   <script>
@@ -217,7 +203,7 @@
       document.getElementById('musica').play();
     }
 
-    // Efeito fade-in ao rolar
+    // Animação das imagens ao rolar
     const faders = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {

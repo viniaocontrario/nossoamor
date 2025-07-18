@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -38,13 +39,11 @@
       background-size: contain;
       background-repeat: no-repeat;
       background-position: top center;
-      background-attachment: scroll; /* corrigido: permite rolagem normal */
+      background-attachment: fixed;
       background-color: #000;
       font-family: Arial, sans-serif;
       text-align: center;
       color: #ffffff;
-      min-height: 100vh;
-      padding-top: 20px;
     }
 
     .welcome {
@@ -167,34 +166,31 @@
     <img src="img/imag12.JPG" alt="te" class="fade-in">
     <img src="img/imag7.JPG" alt="amo" class="fade-in">
 
-    <!-- VÍDEO COM REPRODUÇÃO AUTOMÁTICA INLINE -->
-    <video muted autoplay loop playsinline class="fade-in">
+    <video muted autoplay loop>
       <source src="img/roou2522_QjvgfGNy.mp4" type="video/mp4">
       Seu navegador não suporta vídeo.
     </video>
 
     <div class="poema-box">
       <p class="poema">
-        Busquei por muito tempo<br>
-        um lar onde eu pertencesse<br>
-        e finalmente achei um<br><br>
+    Busquei por muito tempo<br>
+um lar onde eu pertencesse<br>
+e finalmente achei um<br><br>
 
-        O meu lar tem os olhos castanhos claros<br>
-        o humor duvidoso — que eu amo —<br>
-        o seu jeito apaixonante, mais doce que brigadeiro<br>
-        o cabelo mais lindo que já vi<br>
-        o sorriso que carrega a risada mais adorável<br><br>
+O meu lar tem os olhos castanhos claros<br>
+o humor duvidoso — que eu amo —<br>
+o seu jeito apaixonante, mais doce que brigadeiro<br>
+o cabelo mais lindo que já vi<br>
+o sorriso que carrega a risada mais adorável<br><br>
 
-        Quero morar no seu abraço para sempre<br>
-        e estar do seu lado a cada instante<br>
-        Você é a definição da minha felicidade<br>
-        Tudo o que eu sempre quis em alguém, sem mudar nada<br>
-        É você quem eu amo, e sempre será<br><br>
+Quero morar no seu abraço para sempre<br>
+e estar do seu lado a cada instante<br>
+Você é a definição da minha felicidade<br>
+Tudo o que eu sempre quis em alguém, sem mudar nada<br>
+É você quem eu amo, e sempre será<br><br>
 
-        <i>- o meu lar é o meu amor</i><br>
-        <b>— @alucinadora</b>
-      </p>
-    </div>
+<i>- o meu lar é o meu amor</i>
+<b>— @alucinadora</b>
 
   </div>
 
@@ -205,6 +201,7 @@
       document.getElementById('musica').play();
     }
 
+    // Animação das imagens ao rolar
     const faders = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {

@@ -1,10 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Para o Amor da Minha Vida 💖</title>
   <style>
+    .heart-btn {
+      padding: 15px 30px;
+      font-size: 20px;
+      border: none;
+      border-radius: 10px;
+      background-color: #c90303;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 15px #c90303;
+      animation: heartbeat 1.5s infinite;
+      transition: transform 0.3s ease;
+    }
+
+    .heart-btn:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes heartbeat {
+      0%, 40%, 80%, 100% { transform: scale(1); }
+      20%, 60% { transform: scale(1.15); }
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -13,13 +35,14 @@
 
     body {
       background-image: url('img/teeemo.gif');
+      background-size: contain;
       background-repeat: no-repeat;
-      background-position: center top;
-      background-size: contain; /* Mostra a imagem inteira */
+      background-position: top center;
+      background-attachment: scroll; /* corrigido: permite rolagem normal */
       background-color: #000;
       font-family: Arial, sans-serif;
       text-align: center;
-      color: #fff;
+      color: #ffffff;
       min-height: 100vh;
       padding-top: 20px;
     }
@@ -35,80 +58,28 @@
       justify-content: center;
       flex-direction: column;
       z-index: 999;
-      padding: 20px;
-      text-align: center;
     }
 
-    .welcome button,
-    .heart-btn {
+    .welcome button {
       padding: 15px 30px;
-      font-size: 1.2rem;
+      font-size: 18px;
       border: none;
       border-radius: 10px;
       background-color: #c90303;
       color: white;
       cursor: pointer;
-      box-shadow: 0 0 15px #c90303;
-      transition: transform 0.3s ease;
-    }
-
-    .heart-btn {
-      animation: heartbeat 1.5s infinite;
-    }
-
-    @keyframes heartbeat {
-      0%, 40%, 80%, 100% { transform: scale(1); }
-      20%, 60% { transform: scale(1.15); }
-    }
-
-    .welcome button:hover,
-    .heart-btn:hover {
-      transform: scale(1.05);
+      box-shadow: 0 0 10px #c90303;
     }
 
     .hidden {
-      display: none !important;
-    }
-
-    .galeria {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 40px;
-      margin: 40px auto;
-      padding: 20px;
-      max-width: 100%;
-    }
-
-    .intro-box, .poema-box {
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 20px;
-      margin: 20px auto;
-      max-width: 90%;
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(201, 3, 3, 0.5);
-    }
-
-    .intro-box h1,
-    .welcome h2 {
-      font-size: 1.5rem;
-      margin-bottom: 15px;
-    }
-
-    p.poema {
-      margin: 0 auto;
-      max-width: 700px;
-      line-height: 1.6;
-      font-size: 1rem;
+      display: none;
     }
 
     img {
-      width: 90%;
-      max-width: 350px;
-      margin: 10px 0;
+      width: 300px;
+      margin: 10px;
       border-radius: 15px;
       box-shadow: 0 0 10px #c90303;
-      transition: opacity 1s ease-out, transform 1s ease-out;
     }
 
     video {
@@ -123,6 +94,16 @@
       display: none;
     }
 
+    .galeria {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      margin: 40px auto;
+      padding: 20px;
+      max-width: 100%;
+    }
+
     .fade-in {
       opacity: 0;
       transform: translateY(30px);
@@ -134,25 +115,19 @@
       transform: translateY(0);
     }
 
-    @media (max-width: 480px) {
-      .welcome button,
-      .heart-btn {
-        font-size: 1rem;
-        padding: 12px 25px;
-      }
+    .intro-box, .poema-box {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      margin: 20px auto;
+      max-width: 800px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(201, 3, 3, 0.5);
+    }
 
-      .intro-box, .poema-box {
-        padding: 15px;
-        max-width: 95%;
-      }
-
-      p.poema {
-        font-size: 0.9rem;
-      }
-
-      img {
-        max-width: 90%;
-      }
+    p.poema {
+      margin: 0 auto;
+      max-width: 700px;
+      line-height: 1.6;
     }
   </style>
 </head>
@@ -167,7 +142,7 @@
   </div>
 
   <audio id="musica" loop>
-    <source src="mp3/Aliança - Tribalistas ( lyrics_ letra ) @eodudzinska.mp3" type="audio/mpeg" />
+    <source src="mp3/Aliança - Tribalistas ( lyrics_ letra ) @eodudzinska.mp3" type="audio/mpeg">
     Seu navegador não suporta áudio.
   </audio>
 
@@ -182,18 +157,19 @@
       </p>
     </div>
 
-    <img src="img/imag10.JPG" alt="imag1" class="fade-in" />
-    <img src="img/imag8.JPG" alt="foto nossa" class="fade-in" />
-    <img src="img/imag9.JPG" alt="GOSTOSA!" class="fade-in" />
-    <img src="img/imag4.png" alt="linda" class="fade-in" />
-    <img src="img/imag13.JPG" alt="vsfd" class="fade-in" />
-    <img src="img/imag6.webp" alt="te amo" class="fade-in" />
-    <img src="img/imag11.JPG" alt="amor" class="fade-in" />
-    <img src="img/imag12.JPG" alt="te" class="fade-in" />
-    <img src="img/imag7.JPG" alt="amo" class="fade-in" />
+    <img src="img/imag10.JPG" alt="imag1" class="fade-in">
+    <img src="img/imag8.JPG" alt="foto nossa" class="fade-in">
+    <img src="img/imag9.JPG" alt="GOSTOSA!" class="fade-in">
+    <img src="img/imag4.png" alt="linda" class="fade-in">
+    <img src="img/imag13.JPG" alt="vsfd" class="fade-in">
+    <img src="img/imag6.webp" alt="te amo" class="fade-in">
+    <img src="img/imag11.JPG" alt="amor" class="fade-in">
+    <img src="img/imag12.JPG" alt="te" class="fade-in">
+    <img src="img/imag7.JPG" alt="amo" class="fade-in">
 
+    <!-- VÍDEO COM REPRODUÇÃO AUTOMÁTICA INLINE -->
     <video muted autoplay loop playsinline class="fade-in">
-      <source src="img/ROOU2522.MOV" type="video/mp4" />
+      <source src="img/roou2522_QjvgfGNy.mp4" type="video/mp4">
       Seu navegador não suporta vídeo.
     </video>
 
@@ -226,10 +202,7 @@
     function startSite() {
       document.getElementById('welcome').classList.add('hidden');
       document.getElementById('conteudo').classList.remove('hidden');
-      const musica = document.getElementById('musica');
-      musica.play().catch(() => {
-        console.log('Interação necessária para tocar áudio');
-      });
+      document.getElementById('musica').play();
     }
 
     const faders = document.querySelectorAll('.fade-in');

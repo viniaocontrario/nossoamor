@@ -5,218 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Para o Amor da Minha Vida 💖</title>
   <style>
-    * {
+    /* Fonte para deixar o texto mais romântico e legível */
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background-image: url('img/teeemo.gif');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: top center;
-      background-attachment: fixed;
-      background-color: #000;
       font-family: Arial, sans-serif;
+      color: white;
       text-align: center;
-      color: #ffffff;
+      background-image: url('b8ee22ae-d00c-449f-8fa8-2e616c56478d.jpg'); /* sua imagem de fundo */
+      background-size: cover; /* cobre a tela inteira */
+      background-attachment: fixed; /* fixa a imagem de fundo */
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
-    .heart-btn {
-      padding: 15px 30px;
-      font-size: 20px;
-      border: none;
-      border-radius: 10px;
-      background-color: #c90303;
-      color: white;
-      cursor: pointer;
-      box-shadow: 0 0 15px rgba(173, 216, 230, 0.85);
-      animation: heartbeat 1.5s infinite;
-      transition: transform 0.3s ease;
-    }
-
-    .heart-btn:hover {
-      transform: scale(1.05);
-    }
-
-    @keyframes heartbeat {
-      0%, 40%, 80%, 100% { transform: scale(1); }
-      20%, 60% { transform: scale(1.15); }
-    }
-
-    .welcome {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.95);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      z-index: 999;
-    }
-
-    .welcome button {
-      padding: 15px 30px;
-      font-size: 18px;
-      border: none;
-      border-radius: 10px;
-      background-color: #c90303;
-      color: white;
-      cursor: pointer;
-      box-shadow: 0 0 15px rgba(173, 216, 230, 0.85);
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    img {
-      width: 300px;
-      margin: 10px;
-      border-radius: 15px;
-      box-shadow: 0 0 10px rgba(173, 216, 230, 0.85);
-    }
-
-    video {
-      margin-top: 10px;
-      width: 90%;
-      max-width: 600px;
-      border-radius: 15px;
-      box-shadow: 0 0 10px rgba(173, 216, 230, 0.85);
-    }
-
-    audio {
-      display: none;
-    }
-
-    .galeria {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 40px;
-      margin: 40px auto;
-      padding: 20px;
-      max-width: 100%;
-    }
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 1s ease-out, transform 1s ease-out;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .intro-box, .poema-box {
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 30px;
-      margin: 20px auto;
+    /* Caixa com texto centralizado e visual fofo */
+    .container {
       max-width: 800px;
-      border-radius: 20px;
-      box-shadow: 0 0 25px rgba(173, 216, 230, 0.85);
+      margin: 40px auto;
+      padding: 30px;
+      background-color: rgba(0, 0, 0, 0.7); /* fundo semi-transparente */
+      border-radius: 25px;
+      box-shadow: 0 0 25px rgba(173, 216, 230, 0.9); /* sombra azul clarinha e suave */
     }
 
-    p.poema {
-      margin: 0 auto;
-      max-width: 700px;
-      line-height: 1.6;
+    /* Título principal */
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    /* Parágrafos */
+    p {
+      font-size: 1.2em;
+      margin: 10px 0;
+    }
+
+    /* Ajuste para telas pequenas (smartphone) */
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px 15px;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 1.8em;
+      }
+
+      p {
+        font-size: 1em;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="welcome" id="welcome">
-    <div class="intro-box">
-      <h2>Bom dia, meu amor 💕</h2>
-      <p>
-        Fiz isso durante esses dias pra te mostrar o qual importante você é pra mim.<br><br>
-        Quero estar ao seu lado a cada passo e a cada conquista que tivermos!<br><br>
-        Outras pessoas viram esse site, mas mudei pois queria que fosse único pra você!
-      </p>
-      <button onclick="startSite()" class="heart-btn">💖 Entrar</button>
-    </div>
+  <!-- Caixa com texto principal -->
+  <div class="container">
+    <h1>Para a minha Princesinha e grande amor da minha vida!💖</h1>
+    <p>Este site é só pra mostrar o quanto você é especial pra mim.</p>
+    <p>Saiba que a todo instante eu penso em você, em nós e na nossa família.</p>
+    <p><strong>FELIZ 8 MESES DE NAMORO!</strong> Separei algumas fotos nossas que eu gosto muito rsrs.</p>
   </div>
 
-  <audio id="musica" loop>
-    <source src="mp3/Aliança - Tribalistas ( lyrics_ letra ) @eodudzinska.mp3" type="audio/mpeg">
-    Seu navegador não suporta áudio.
-  </audio>
-
-  <div id="conteudo" class="galeria hidden">
-
-    <div class="intro-box">
-      <h1>Para a minha Princesinha e grande amor da minha vida!💖</h1>
-      <p class="poema">
-        Este site é só pra mostrar o quanto você é especial pra mim.<br><br>
-        Saiba que a todo instante eu penso em você, em nós e na nossa família.<br><br>
-        FELIZ 8 MESES DE NAMORO! Separei algumas fotos nossas que eu gosto muito rsrs.<br><br>
-      </p>
-    </div>
-
-    <img src="img/imag10.JPG" alt="imag1" class="fade-in">
-    <img src="img/imag8.JPG" alt="foto nossa" class="fade-in">
-    <img src="img/imag9.JPG" alt="GOSTOSA!" class="fade-in">
-    <img src="img/imag4.png" alt="linda" class="fade-in">
-    <img src="img/imag13.JPG" alt="vsfd" class="fade-in">
-    <img src="img/imag6.webp" alt="te amo" class="fade-in">
-    <img src="img/imag11.JPG" alt="amor" class="fade-in">
-    <img src="img/imag12.JPG" alt="te" class="fade-in">
-    <img src="img/imag7.JPG" alt="amo" class="fade-in">
-
-    <video autoplay loop muted playsinline>
-      <source src="img/roou2522_QjvgfGNy.mp4" type="video/mp4">
-      Seu navegador não suporta vídeo.
-    </video>
-
-    <div class="poema-box">
-      <p class="poema">
-        Busquei por muito tempo<br>
-        um lar onde eu pertencesse<br>
-        e finalmente achei um<br><br>
-
-        O meu lar tem os olhos castanhos claros<br>
-        o humor duvidoso — que eu amo —<br>
-        o seu jeito apaixonante, mais doce que brigadeiro<br>
-        o cabelo mais lindo que já vi<br>
-        o sorriso que carrega a risada mais adorável<br><br>
-
-        Quero morar no seu abraço para sempre<br>
-        e estar do seu lado a cada instante<br>
-        Você é a definição da minha felicidade<br>
-        Tudo o que eu sempre quis em alguém, sem mudar nada<br>
-        É você quem eu amo, e sempre será<br><br>
-
-        <i>- o meu lar é o meu amor</i><br>
-        <b>— @alucinadora</b>
-      </p>
-    </div>
+  <!-- Outra caixa (opcional), pode duplicar quantas quiser -->
+  <div class="container">
+    <p>Aqui pode colocar mais texto ou imagens!</p>
   </div>
-
-  <script>
-    function startSite() {
-      document.getElementById('welcome').classList.add('hidden');
-      document.getElementById('conteudo').classList.remove('hidden');
-      document.getElementById('musica').play();
-    }
-
-    // Animação de fade das imagens
-    const faders = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.2 });
-
-    faders.forEach(el => observer.observe(el));
-  </script>
 
 </body>
 </html>
